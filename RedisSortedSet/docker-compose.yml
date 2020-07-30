@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  redissortedset:
+    image: ${DOCKER_REGISTRY-}redissortedset
+    build:
+      context: .
+      dockerfile: RedisSortedSet/Dockerfile
+    networks:
+      - webnet
+    depends_on:
+      - redis
+  redis:
+    image: redis:6.0.3-alpine
+    container_name: redis
+    ports:
+        - 6379:6379
+    networks:
+      - webnet
+networks:
+  webnet:
+    external: true

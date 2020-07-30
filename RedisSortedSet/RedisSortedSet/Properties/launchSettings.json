@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RedisSortedSet": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
